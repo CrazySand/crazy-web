@@ -1,8 +1,8 @@
 <script setup>
 import { computed } from "vue"
 import { House, Lock, UserFilled } from "@element-plus/icons-vue"
-import collapseIconExpand from "@/assets/images/menu_collasped-right.svg"
-import collapseIconCollapse from "@/assets/images/menu_collasped-left.svg"
+import collapseIconExpand from "@/assets/layout/sidebar/menu_collasped-right.svg"
+import collapseIconCollapse from "@/assets/layout/sidebar/menu_collasped-left.svg"
 
 const props = defineProps({
     collapsed: {
@@ -49,7 +49,7 @@ const handleToggle = () => {
         <router-link to="/home">
             <div class="layout-sidebar__brand">
                 <img
-                    src="@/assets/images/waterdrop.svg"
+                    src="@/assets/layout/waterdrop.svg"
                     alt=""
                     draggable="false"
                 />

@@ -59,7 +59,7 @@ const handleToggle = () => {
     <div class="home-sidebar">
         <router-link to="/dashboard">
             <div class="home-sidebar__brand">
-                <img src="@/assets/images/waterdrop.svg" alt="" draggable="false" />
+                <img src="@/assets/layout/waterdrop.svg" alt="" draggable="false" />
                 <span class="home-sidebar__brand-text u-unselectable" :class="{ 'is-collapsing': isCollapsing }"
                     v-show="!actualCollapse">
                     <span v-for="(char, i) in brandText" :key="i" :style="{
@@ -138,9 +138,9 @@ const handleToggle = () => {
             text
         >
             <el-tooltip :content="isCollapse ? '点击展开' : '点击折叠'" placement="right" effect="light">
-                <img class="home-sidebar__toggle-btn-icon" src="@/assets/images/menu_collasped-right.svg"
+                <img class="home-sidebar__toggle-btn-icon" src="@/assets/layout/sidebar/menu_collasped-right.svg"
                     v-if="isCollapse">
-                <img class="home-sidebar__toggle-btn-icon" src="@/assets/images/menu_collasped-left.svg" v-else>
+                <img class="home-sidebar__toggle-btn-icon" src="@/assets/layout/sidebar/menu_collasped-left.svg" v-else>
             </el-tooltip>
         </el-button>
 

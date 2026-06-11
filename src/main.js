@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 import ElementPlus from 'element-plus'
+import { MotionPlugin } from '@vueuse/motion'
 import 'element-plus/dist/index.css'
 import 'nprogress/nprogress.css'
 import './style.css'
@@ -20,6 +21,7 @@ useAuthStore(pinia)
 
 app.use(router)
 app.use(ElementPlus)
+app.use(MotionPlugin)
 
 setupInterceptors(router)
 

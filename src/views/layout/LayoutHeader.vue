@@ -71,7 +71,7 @@ const handleFeatureNotOpen = () => {
                 <img
                     v-else
                     class="layout-header__exit-fullscreen-icon"
-                    src="@/assets/images/exit-fullscreen.svg"
+                    src="@/assets/layout/header/exit-fullscreen.svg"
                     alt="退出全屏"
                 />
             </el-button>

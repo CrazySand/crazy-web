@@ -20,17 +20,6 @@ const emit = defineEmits(['open-menu'])
 const authStore = useAuthStore()
 const router = useRouter()
 
-// 根据用户角色确定是否显示徽章及徽章类型
-const showBadge = computed(() => {
-    const role = authStore.user?.role
-    return role === 'super_admin' || role === 'admin'
-})
-
-const badgeType = computed(() => {
-    const role = authStore.user?.role
-    return role === 'super_admin' ? 'yellow' : role === 'admin' ? 'blue' : null
-})
-
 // 用户头像URL
 const userAvatarUrl = computed(() => {
     return authStore.user?.avatar || undefined
@@ -132,7 +121,7 @@ const handleCommand = (command) => {
                 <el-icon v-if="!isFullScreen">
                     <FullScreen />
                 </el-icon>
-                <img v-else class="header__exit-fullscreen-icon" src="@/assets/images/exit-fullscreen.svg" alt="退出全屏" />
+                <img v-else class="header__exit-fullscreen-icon" src="@/assets/layout/header/exit-fullscreen.svg" alt="退出全屏" />
             </el-button>
 
             <!-- 消息通知 -->
@@ -147,14 +136,6 @@ const handleCommand = (command) => {
                             :src="userAvatarUrl">
                             <span>{{ userAvatarText }}</span>
                         </el-avatar>
-                        <img v-if="showBadge && badgeType === 'yellow'" 
-                            src="@/assets/images/diamond-yellow-badge.svg" 
-                            alt="超级管理员徽章" 
-                            class="header__badge" />
-                        <img v-if="showBadge && badgeType === 'blue'" 
-                            src="@/assets/images/diamond-blue-badge.svg" 
-                            alt="管理员徽章" 
-                            class="header__badge" />
                     </div>
                     <span class="header__nickname u-unselectable">
                         {{ authStore.user?.nickname }}
